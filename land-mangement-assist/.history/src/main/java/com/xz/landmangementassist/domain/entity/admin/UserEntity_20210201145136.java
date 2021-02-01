@@ -21,7 +21,7 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
-@TableName("t_admin_user")
+@TableName("tab_admin_user")
 @EqualsAndHashCode(callSuper = true)
 public class UserEntity extends BaseEntity implements Serializable {
 

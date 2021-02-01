@@ -24,6 +24,6 @@ public interface UserDAO extends BaseMapper<UserEntity> {
 
     // 普通CRUD都通过baseMapper配合QueryWrapper来查询
     // 特殊查询通过@select注解的方式实现
-    @Select("SELECT * FROM t_admin_user where id = #{userQueryDTO.id}")
+    @Select("SELECT * FROM m_blog where user_id = #{userid}")
     List<UserDTO> selectByUserid(@Param("userQueryDTO") UserQueryDTO userQueryDTO);
 }
