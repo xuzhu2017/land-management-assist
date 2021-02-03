@@ -2,6 +2,9 @@ package com.xz.landmangementassist.domain.entity.admin;
 
 import java.io.Serializable;
 
+import javax.persistence.Entity;
+import javax.persistence.Table;
+
 import com.baomidou.mybatisplus.annotation.TableName;
 import com.xz.landmangementassist.domain.entity.BaseEntity;
 
@@ -12,7 +15,7 @@ import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
 
 /**
- * 权限实体
+ * 用户-角色关联实体
  * 
  * @author xuzhu
  * @date 2021-1-29 13:00:03
@@ -21,36 +24,23 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
-@TableName("t_admin_permission")
+@Entity
+@TableName("t_admin_user_role")
 @EqualsAndHashCode(callSuper = true)
-public class AdminPermissionEntity extends BaseEntity implements Serializable {
+public class AdminUserRoleEntity extends BaseEntity implements Serializable {
     /**
      *
      */
-    private static final long serialVersionUID = -100109751899857476L;
+    private static final long serialVersionUID = -7407546322491313519L;
 
     /**
-     * 权限编码
+     * User id.
      */
-    private String code;
+    private int userId;
 
     /**
-     * 权限名称
+     * Role id.
      */
-    private String name;
+    private int roleId;
 
-    /**
-     * 权限描述
-     */
-    private String description;
-
-    /**
-     * 触发权限的url
-     */
-    private String url;
-
-    /**
-     * 逻辑删除
-     */
-    private boolean deleted;
 }

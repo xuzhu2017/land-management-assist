@@ -12,45 +12,38 @@ import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
 
 /**
- * 权限实体
+ * 角色实体
  * 
  * @author xuzhu
- * @date 2021-1-29 13:00:03
+ * @date 2021-1-29 10:30:43
  */
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
-@TableName("t_admin_permission")
+@TableName("t_admin_role")
 @EqualsAndHashCode(callSuper = true)
-public class AdminPermissionEntity extends BaseEntity implements Serializable {
+public class AdminRoleEntity extends BaseEntity implements Serializable {
+
     /**
      *
      */
-    private static final long serialVersionUID = -100109751899857476L;
+    private static final long serialVersionUID = 3832918797553983514L;
 
     /**
-     * 权限编码
-     */
-    private String code;
-
-    /**
-     * 权限名称
+     * 角色名
      */
     private String name;
 
     /**
-     * 权限描述
+     * 角色名（中文）
      */
-    private String description;
+    @Column(name = "name_zh")
+    private String nameZh;
 
     /**
-     * 触发权限的url
+     * 角色状态
      */
-    private String url;
+    private boolean enabled;
 
-    /**
-     * 逻辑删除
-     */
-    private boolean deleted;
 }

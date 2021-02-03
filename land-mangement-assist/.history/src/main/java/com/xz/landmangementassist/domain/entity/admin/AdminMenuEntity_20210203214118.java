@@ -12,7 +12,7 @@ import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
 
 /**
- * 权限实体
+ * 菜单实体
  * 
  * @author xuzhu
  * @date 2021-1-29 13:00:03
@@ -21,36 +21,41 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
-@TableName("t_admin_permission")
+@TableName("t_admin_menu")
 @EqualsAndHashCode(callSuper = true)
-public class AdminPermissionEntity extends BaseEntity implements Serializable {
+public class AdminMenuEntity extends BaseEntity implements Serializable {
     /**
      *
      */
-    private static final long serialVersionUID = -100109751899857476L;
+    private static final long serialVersionUID = 3258458544798880222L;
 
     /**
-     * 权限编码
+     * 菜单路由
      */
-    private String code;
+    private String path;
 
     /**
-     * 权限名称
+     * 菜单名称
      */
     private String name;
 
     /**
-     * 权限描述
+     * 菜单名称（中文）
      */
-    private String description;
+    private String nameZh;
 
     /**
-     * 触发权限的url
+     * 图标样式(element-ui icons)
      */
-    private String url;
+    private String iconCls;
 
     /**
-     * 逻辑删除
+     * vue组件名
      */
-    private boolean deleted;
+    private String component;
+
+    /**
+     * 父菜单
+     */
+    private Integer parentId;
 }

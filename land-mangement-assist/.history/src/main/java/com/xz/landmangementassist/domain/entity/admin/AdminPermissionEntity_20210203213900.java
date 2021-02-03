@@ -2,7 +2,9 @@ package com.xz.landmangementassist.domain.entity.admin;
 
 import java.io.Serializable;
 
-import com.baomidou.mybatisplus.annotation.TableName;
+import javax.persistence.Entity;
+import javax.persistence.Table;
+
 import com.xz.landmangementassist.domain.entity.BaseEntity;
 
 import lombok.AllArgsConstructor;
@@ -21,18 +23,14 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
-@TableName("t_admin_permission")
+@Entity
+@Table(name = "admin_permission")
 @EqualsAndHashCode(callSuper = true)
 public class AdminPermissionEntity extends BaseEntity implements Serializable {
     /**
      *
      */
     private static final long serialVersionUID = -100109751899857476L;
-
-    /**
-     * 权限编码
-     */
-    private String code;
 
     /**
      * 权限名称

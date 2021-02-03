@@ -2,7 +2,9 @@ package com.xz.landmangementassist.domain.entity.admin;
 
 import java.io.Serializable;
 
-import com.baomidou.mybatisplus.annotation.TableName;
+import javax.persistence.Entity;
+import javax.persistence.Table;
+
 import com.xz.landmangementassist.domain.entity.BaseEntity;
 
 import lombok.AllArgsConstructor;
@@ -21,7 +23,8 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
-@TableName("t_admin_user_role")
+@Entity
+@Table(name = "admin_user_role")
 @EqualsAndHashCode(callSuper = true)
 public class AdminUserRoleEntity extends BaseEntity implements Serializable {
     /**

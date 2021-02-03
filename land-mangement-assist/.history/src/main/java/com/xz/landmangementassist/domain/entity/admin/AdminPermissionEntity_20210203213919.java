@@ -30,11 +30,6 @@ public class AdminPermissionEntity extends BaseEntity implements Serializable {
     private static final long serialVersionUID = -100109751899857476L;
 
     /**
-     * 权限编码
-     */
-    private String code;
-
-    /**
      * 权限名称
      */
     private String name;
