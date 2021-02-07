@@ -56,6 +56,11 @@
 			<artifactId>mybatis-plus</artifactId>
 			<version>3.4.2</version>
 		</dependency>
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-jdbc</artifactId>
+			<version>4.3.29.RELEASE</version>
+		</dependency>
 		<!-- mysql-->
 		<dependency>
 			<groupId>mysql</groupId>

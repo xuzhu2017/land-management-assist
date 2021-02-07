@@ -25,9 +25,8 @@ CREATE TABLE IF NOT EXISTS `land_management_assist_dev`.`t_admin_menu`
  `create_time` datetime NOT NULL COMMENT '创建时间' ,
  `update_time` datetime NOT NULL COMMENT '更新时间' ,
 
-PRIMARY KEY (`id`),
+PRIMARY KEY (`id`)
 KEY `t_admin_menu_index_on_parent_id` (`parent_id`),
-KEY `t_admin_menu_index_on_code` (`code`)
 ) ENGINE=InnoDB AUTO_INCREMENT=100 DEFAULT CHARSET=utf8 COMMENT='菜单表';
 
 -- ----------------------------
@@ -169,8 +168,7 @@ CREATE TABLE IF NOT EXISTS `land_management_assist_dev`.`t_admin_user`
  `create_time` datetime NOT NULL COMMENT '创建时间' ,
  `update_time` datetime NOT NULL COMMENT '更新时间' ,
 
-PRIMARY KEY (`id`),
-KEY `t_admin_user_index_on_username` (`username`)
+PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=100 DEFAULT CHARSET=utf8 COMMENT='用户表';
 
 -- ----------------------------

@@ -1,11 +1,10 @@
 package com.xz.landmangementassist;
 
-import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-@MapperScan("com.xz.landmangementassist.repository.admin")
+@MapperScan("com.baomidou.mybatisplus.samples.quickstart.mapper")
 public class LandMangementAssistApplication {
 
 	public static void main(String[] args) {

@@ -7,6 +7,5 @@ spring:
     username: xuzhu
     password: 456654123a
 
-# server
 server:
   port: 8443

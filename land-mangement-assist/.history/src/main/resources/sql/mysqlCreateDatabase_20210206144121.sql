@@ -25,9 +25,7 @@ CREATE TABLE IF NOT EXISTS `land_management_assist_dev`.`t_admin_menu`
  `create_time` datetime NOT NULL COMMENT '创建时间' ,
  `update_time` datetime NOT NULL COMMENT '更新时间' ,
 
-PRIMARY KEY (`id`),
-KEY `t_admin_menu_index_on_parent_id` (`parent_id`),
-KEY `t_admin_menu_index_on_code` (`code`)
+PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=100 DEFAULT CHARSET=utf8 COMMENT='菜单表';
 
 -- ----------------------------
@@ -169,16 +167,8 @@ CREATE TABLE IF NOT EXISTS `land_management_assist_dev`.`t_admin_user`
  `create_time` datetime NOT NULL COMMENT '创建时间' ,
  `update_time` datetime NOT NULL COMMENT '更新时间' ,
 
-PRIMARY KEY (`id`),
-KEY `t_admin_user_index_on_username` (`username`)
+PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=100 DEFAULT CHARSET=utf8 COMMENT='用户表';
-
--- ----------------------------
--- Records of t_admin_user
--- ----------------------------
-INSERT INTO `t_admin_user` VALUES ('1', 'admin', '35b9529f89cfb9b848060ca576237e17', '8O+vDNr2sI3N82BI31fu1A==', '管理员', '12312312312', '0', '2021-02-06 22:15:19', '2021-02-06 22:18:21');
-INSERT INTO `t_admin_user` VALUES ('2', 'test', '85087738b6c1e1d212683bfafc163853', 'JBba3j5qRykIPJQYTNNH9A==', '测试', '12312312312', '0', '2021-02-06 22:15:19', '2021-02-06 22:18:21');
-INSERT INTO `t_admin_user` VALUES ('3', 'editor', '8583a2d965d6159edbf65c82d871fa3e', 'MZTe7Qwf9QgXBXrZzTIqJQ==', '编辑', null, '0', '2021-02-06 22:15:19', '2021-02-06 22:18:21');
 
 
 -- ************************************** `land_management_assist_dev`.`t_admin_user_role`
@@ -194,10 +184,3 @@ CREATE TABLE IF NOT EXISTS `land_management_assist_dev`.`t_admin_user_role`
 PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=100 DEFAULT CHARSET=utf8 COMMENT='用户和角色关联表';
 
--- ----------------------------
--- Records of t_admin_user_role
--- ----------------------------
-INSERT INTO `t_admin_user_role` VALUES ('1', '24', '2', '2021-02-06 22:15:19', '2021-02-06 22:18:21');
-INSERT INTO `t_admin_user_role` VALUES ('2', '3', '2', '2021-02-06 22:15:19', '2021-02-06 22:18:21');
-INSERT INTO `t_admin_user_role` VALUES ('3', '1', '1', '2021-02-06 22:15:19', '2021-02-06 22:18:21');
-INSERT INTO `t_admin_user_role` VALUES ('4', '2', '3', '2021-02-06 22:15:19', '2021-02-06 22:18:21');
