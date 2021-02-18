@@ -1,3 +1,4 @@
+# spring config
 spring:
   # DataSource Config
   datasource:
@@ -6,9 +7,6 @@ spring:
     username: xuzhu
     password: 456654123a
 
+# server
 server:
   port: 8443
-
-mybatis-plus:
-  configuration:
-    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
