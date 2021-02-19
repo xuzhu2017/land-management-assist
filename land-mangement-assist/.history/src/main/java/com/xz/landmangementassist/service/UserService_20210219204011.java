@@ -26,7 +26,7 @@ public interface UserService {
      * @param username
      * @return
      */
-    public Result<Boolean> isExist(String username);
+    public boolean isExist(String username);
 
     /**
      * 按名字获取用户
@@ -52,28 +52,4 @@ public interface UserService {
      * @return
      */
     public Result<UserDTO> register(UserDTO user);
-
-    /**
-     * 更新
-     * 
-     * @param user
-     * @return
-     */
-    public Result<UserDTO> update(UserDTO user);
-
-    /**
-     * 删除
-     * 
-     * @param user
-     * @return
-     */
-    public Result<UserDTO> delete(UserDTO user);
-
-    /**
-     * 重置密码
-     * 
-     * @param user
-     * @return
-     */
-    public Result<UserDTO> resetPassword(UserDTO user);
 }

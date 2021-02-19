@@ -24,9 +24,9 @@ public class UserServeiceImpl implements UserService {
     }
 
     @Override
-    public Result<Boolean> isExist(String username) {
+    public boolean isExist(String username) {
         // TODO Auto-generated method stub
-        return null;
+        return false;
     }
 
     @Override

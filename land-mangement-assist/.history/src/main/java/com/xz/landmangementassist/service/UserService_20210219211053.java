@@ -26,7 +26,7 @@ public interface UserService {
      * @param username
      * @return
      */
-    public Result<Boolean> isExist(String username);
+    public boolean isExist(String username);
 
     /**
      * 按名字获取用户
