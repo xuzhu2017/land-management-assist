@@ -19,27 +19,10 @@ import org.springframework.stereotype.Component;
 @Mapper
 @Component
 public interface AdminMenuDAO extends BaseMapper<AdminMenuEntity> {
-    /**
-     * 获取当前用户的菜单
-     * 
-     * @param username
-     * @return
-     */
     @Select("select t_admin_menu.* " + "from t_admin_user_role "
             + "inner join t_admin_role_menu on t_admin_user_role.role_id = t_admin_role_menu.role_id "
             + "inner join t_admin_menu on t_admin_role_menu.menu_id = t_admin_menu.id "
-            + "inner join t_admin_user on t_admin_user_role.user_id = t_admin_user.id "
-            + "where t_admin_user.username = #{username}")
+            + "inner join t_admin_user on t_admin_user_role.menu_id = t_admin_user.id "
+            + "where id = #{userQueryDTO.id}")
     List<AdminMenuEntity> getMenuListByCurrentUser(@Param("username") String username);
-
-    /**
-     * 获取角色菜单
-     * 
-     * @param roleId
-     * @return
-     */
-    @Select("select t_admin_menu.* " + "from t_admin_role_menu "
-            + "inner join t_admin_menu on t_admin_role_menu.menu_id = t_admin_menu.id "
-            + "where t_admin_role_menu.role_id = #{roleId}")
-    List<AdminMenuEntity> getMenuListByRoleId(@Param("roleId") Integer roleId);
 }

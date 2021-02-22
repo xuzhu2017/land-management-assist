@@ -1,6 +1,5 @@
 package com.xz.landmangementassist.service.impl;
 
-import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
@@ -28,21 +27,17 @@ public class AdminRoleMenuServiceImpl extends ServiceImpl<AdminRoleMenuDAO, Admi
     AdminRoleMenuDAO adminRoleMenuDAO;
 
     @Override
+    public AdminRoleMenuDTO save(AdminRoleMenuDTO adminRoleMenu) {
+        return null;
+    }
+
+    @Override
     @Transactional
-    public void updateList(Integer roleId, Map<String, List<Integer>> menusIds) {
+    public List<AdminRoleMenuDTO> updateList(Integer roleId, Map<String, List<Integer>> menusIds) {
         QueryWrapper<AdminRoleMenuEntity> queryWrapper = new QueryWrapper<>();
         queryWrapper.eq("role_id", roleId);
         adminRoleMenuDAO.delete(queryWrapper);
-
-        List<AdminRoleMenuEntity> list = new ArrayList<>();
-        for (Integer mid : menusIds.get("menusIds")) {
-            AdminRoleMenuEntity rm = new AdminRoleMenuEntity();
-            rm.setMemuId(mid);
-            rm.setRoleId(roleId);
-            list.add(rm);
-        }
-
-        saveBatch(list);
+        return null;
     }
 
 }

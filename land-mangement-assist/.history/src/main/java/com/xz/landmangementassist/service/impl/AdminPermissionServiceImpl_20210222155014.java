@@ -3,7 +3,6 @@ package com.xz.landmangementassist.service.impl;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Set;
-import java.util.stream.Collectors;
 
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.xz.landmangementassist.domain.dto.admin.AdminPermissionDTO;
@@ -39,13 +38,20 @@ public class AdminPermissionServiceImpl implements AdminPermissionService {
 
     @Override
     public boolean needFilter(String requestAPI) {
-        return list().stream().anyMatch(p -> requestAPI.startsWith(p.getUrl()));
+        List<AdminPermissionDTO> list = list();
+        return false;
+    }
+
+    @Override
+    public List<AdminPermissionDTO> getListByRoleId(Integer roleId) {
+        // TODO Auto-generated method stub
+        return null;
     }
 
     @Override
     public Set<String> listPermissionURLsByUser(String username) {
-        return adminPermissionDAO.getListByUsername(username).stream().map(AdminPermissionEntity::getUrl)
-                .collect(Collectors.toSet());
+        // TODO Auto-generated method stub
+        return null;
     }
 
 }

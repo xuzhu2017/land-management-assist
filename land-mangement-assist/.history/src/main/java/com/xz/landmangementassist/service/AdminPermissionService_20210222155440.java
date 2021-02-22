@@ -28,6 +28,14 @@ public interface AdminPermissionService {
     public boolean needFilter(String requestAPI);
 
     /**
+     * 获取角色的权限
+     * 
+     * @param roleId
+     * @return
+     */
+    public List<AdminPermissionDTO> getListByRoleId(Integer roleId);
+
+    /**
      * 用户有权限访问的urls
      * 
      * @param username

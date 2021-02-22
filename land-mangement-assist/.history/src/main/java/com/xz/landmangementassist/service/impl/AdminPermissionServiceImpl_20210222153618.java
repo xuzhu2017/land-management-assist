@@ -1,13 +1,9 @@
 package com.xz.landmangementassist.service.impl;
 
-import java.util.ArrayList;
 import java.util.List;
 import java.util.Set;
-import java.util.stream.Collectors;
 
-import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.xz.landmangementassist.domain.dto.admin.AdminPermissionDTO;
-import com.xz.landmangementassist.domain.entity.admin.AdminPermissionEntity;
 import com.xz.landmangementassist.repository.admin.AdminPermissionDAO;
 import com.xz.landmangementassist.service.AdminPermissionService;
 
@@ -28,24 +24,26 @@ public class AdminPermissionServiceImpl implements AdminPermissionService {
 
     @Override
     public List<AdminPermissionDTO> list() {
-        List<AdminPermissionDTO> list = new ArrayList<>();
-        adminPermissionDAO.selectList(new QueryWrapper<AdminPermissionEntity>()).forEach(p -> {
-            AdminPermissionDTO dto = new AdminPermissionDTO();
-            dto.convertFrom(p);
-            list.add(dto);
-        });
-        return list;
+        // TODO Auto-generated method stub
+        return adminPermissionDAO.selectList(queryWrapper);
     }
 
     @Override
     public boolean needFilter(String requestAPI) {
-        return list().stream().anyMatch(p -> requestAPI.startsWith(p.getUrl()));
+        // TODO Auto-generated method stub
+        return false;
+    }
+
+    @Override
+    public List<AdminPermissionDTO> getListByRoleId(Integer roleId) {
+        // TODO Auto-generated method stub
+        return null;
     }
 
     @Override
     public Set<String> listPermissionURLsByUser(String username) {
-        return adminPermissionDAO.getListByUsername(username).stream().map(AdminPermissionEntity::getUrl)
-                .collect(Collectors.toSet());
+        // TODO Auto-generated method stub
+        return null;
     }
 
 }

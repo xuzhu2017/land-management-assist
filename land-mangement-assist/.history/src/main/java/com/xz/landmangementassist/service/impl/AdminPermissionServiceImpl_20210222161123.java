@@ -44,6 +44,7 @@ public class AdminPermissionServiceImpl implements AdminPermissionService {
 
     @Override
     public Set<String> listPermissionURLsByUser(String username) {
+        // TODO Auto-generated method stub
         return adminPermissionDAO.getListByUsername(username).stream().map(AdminPermissionEntity::getUrl)
                 .collect(Collectors.toSet());
     }

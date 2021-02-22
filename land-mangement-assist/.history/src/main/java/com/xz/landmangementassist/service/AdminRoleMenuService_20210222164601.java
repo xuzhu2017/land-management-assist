@@ -4,6 +4,7 @@ import java.util.List;
 import java.util.Map;
 
 import com.baomidou.mybatisplus.extension.service.IService;
+import com.xz.landmangementassist.domain.dto.admin.AdminRoleMenuDTO;
 import com.xz.landmangementassist.domain.entity.admin.AdminRoleMenuEntity;
 
 /**
@@ -21,5 +22,5 @@ public interface AdminRoleMenuService extends IService<AdminRoleMenuEntity> {
      * @param menusIds
      * @return
      */
-    public void updateList(Integer roleId, Map<String, List<Integer>> menusIds);
+    public List<AdminRoleMenuDTO> updateList(Integer roleId, Map<String, List<Integer>> menusIds);
 }

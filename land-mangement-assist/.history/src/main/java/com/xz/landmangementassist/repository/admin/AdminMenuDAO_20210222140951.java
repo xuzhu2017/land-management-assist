@@ -31,15 +31,4 @@ public interface AdminMenuDAO extends BaseMapper<AdminMenuEntity> {
             + "inner join t_admin_user on t_admin_user_role.user_id = t_admin_user.id "
             + "where t_admin_user.username = #{username}")
     List<AdminMenuEntity> getMenuListByCurrentUser(@Param("username") String username);
-
-    /**
-     * 获取角色菜单
-     * 
-     * @param roleId
-     * @return
-     */
-    @Select("select t_admin_menu.* " + "from t_admin_role_menu "
-            + "inner join t_admin_menu on t_admin_role_menu.menu_id = t_admin_menu.id "
-            + "where t_admin_role_menu.role_id = #{roleId}")
-    List<AdminMenuEntity> getMenuListByRoleId(@Param("roleId") Integer roleId);
 }
