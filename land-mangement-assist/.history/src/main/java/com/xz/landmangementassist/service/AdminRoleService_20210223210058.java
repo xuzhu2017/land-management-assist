@@ -12,7 +12,7 @@ import com.xz.landmangementassist.domain.entity.admin.AdminRoleEntity;
  * @author xuzhu
  * @date 2021-2-19 20:54:21
  */
-public interface AdminRoleService extends IService<AdminRoleEntity> {
+public interface AdminRoleService extends IService<AdminRoleDTO> {
     /**
      * 角色列表（带权限和菜单）
      * 

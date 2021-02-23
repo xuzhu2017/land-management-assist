@@ -30,5 +30,4 @@ public interface OutputConverter<DTO extends OutputConverter<DTO, DOMAIN>, DOMAI
         return (T) this;
     }
 
-    // TODO: xuzhu:写一个从dto创建实体的方法
 }

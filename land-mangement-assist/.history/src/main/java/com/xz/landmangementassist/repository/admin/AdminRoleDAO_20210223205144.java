@@ -5,7 +5,6 @@ import java.util.List;
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 import com.xz.landmangementassist.domain.dto.admin.AdminMenuDTO;
 import com.xz.landmangementassist.domain.dto.admin.AdminPermissionDTO;
-import com.xz.landmangementassist.domain.dto.admin.AdminRoleDTO;
 import com.xz.landmangementassist.domain.entity.admin.AdminRoleEntity;
 
 import org.apache.ibatis.annotations.Mapper;
@@ -50,14 +49,15 @@ public interface AdminRoleDAO extends BaseMapper<AdminRoleEntity> {
         List<AdminPermissionDTO> getPermissionListByRoleId(@Param("roleIdList") List<Integer> roleIdList);
 
         /**
-         * 获取当前用户的角色
+         * 获取当前用户的菜单
          * 
          * @param username
          * @return
          */
-        @Select("select t_admin_role.* " + "from t_admin_role "
-                        + "inner join t_admin_user_role on t_admin_role.id = t_admin_user_role.role_id "
+        @Select("select t_admin_menu.* " + "from t_admin_user_role "
+                        + "inner join t_admin_role_menu on t_admin_user_role.role_id = t_admin_role_menu.role_id "
+                        + "inner join t_admin_menu on t_admin_role_menu.menu_id = t_admin_menu.id "
                         + "inner join t_admin_user on t_admin_user_role.user_id = t_admin_user.id "
                         + "where t_admin_user.username = #{username}")
-        List<AdminRoleDTO> getListByUsername(@Param("username") String username);
+        List<AdminMenuEntity> getMenuListByCurrentUser(@Param("username") String username);
 }

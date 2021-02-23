@@ -53,13 +53,20 @@ public class AdminRoleServiceImpl extends ServiceImpl<AdminRoleDAO, AdminRoleEnt
 
     @Override
     public AdminRoleDTO saveRolePermission(AdminRoleDTO adminRole) {
-        // boolean success = save(adminRole);
+        // TODO Auto-generated method stub
         return null;
     }
 
     @Override
     public List<AdminRoleDTO> getListByUsername(String username) {
-        return adminRoleDAO.getListByUsername(username);
+        // TODO Auto-generated method stub
+        return null;
+    }
+
+    @Override
+    public AdminRoleDTO delete(AdminRoleDTO adminRole) {
+        // TODO Auto-generated method stub
+        return null;
     }
 
 }

@@ -55,8 +55,9 @@ public interface AdminRoleDAO extends BaseMapper<AdminRoleEntity> {
          * @param username
          * @return
          */
-        @Select("select t_admin_role.* " + "from t_admin_role "
-                        + "inner join t_admin_user_role on t_admin_role.id = t_admin_user_role.role_id "
+        @Select("select t_admin_menu.* " + "from t_admin_user_role "
+                        + "inner join t_admin_role_menu on t_admin_user_role.role_id = t_admin_role_menu.role_id "
+                        + "inner join t_admin_menu on t_admin_role_menu.menu_id = t_admin_menu.id "
                         + "inner join t_admin_user on t_admin_user_role.user_id = t_admin_user.id "
                         + "where t_admin_user.username = #{username}")
         List<AdminRoleDTO> getListByUsername(@Param("username") String username);

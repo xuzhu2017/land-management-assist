@@ -53,7 +53,7 @@ public class AdminRoleServiceImpl extends ServiceImpl<AdminRoleDAO, AdminRoleEnt
 
     @Override
     public AdminRoleDTO saveRolePermission(AdminRoleDTO adminRole) {
-        // boolean success = save(adminRole);
+        boolean success = save(adminRole);
         return null;
     }
 

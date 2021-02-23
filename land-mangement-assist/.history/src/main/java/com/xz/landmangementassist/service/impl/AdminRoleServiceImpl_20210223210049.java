@@ -22,7 +22,7 @@ import org.springframework.stereotype.Service;
  * @date 2021-2-20 14:16:19
  */
 @Service
-public class AdminRoleServiceImpl extends ServiceImpl<AdminRoleDAO, AdminRoleEntity> implements AdminRoleService {
+public class AdminRoleServiceImpl extends ServiceImpl<AdminRoleDAO, AdminRoleDTO> implements AdminRoleService {
     @Autowired
     AdminRoleDAO adminRoleDAO;
 
@@ -53,7 +53,7 @@ public class AdminRoleServiceImpl extends ServiceImpl<AdminRoleDAO, AdminRoleEnt
 
     @Override
     public AdminRoleDTO saveRolePermission(AdminRoleDTO adminRole) {
-        // boolean success = save(adminRole);
+        boolean success = save(adminRole);
         return null;
     }
 

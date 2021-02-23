@@ -36,4 +36,12 @@ public interface AdminRoleService extends IService<AdminRoleEntity> {
      */
     public List<AdminRoleDTO> getListByUsername(String username);
 
+    /**
+     * 删除
+     * 
+     * @param adminRole
+     * @return
+     */
+    public AdminRoleDTO delete(AdminRoleDTO adminRole);
+
 }
