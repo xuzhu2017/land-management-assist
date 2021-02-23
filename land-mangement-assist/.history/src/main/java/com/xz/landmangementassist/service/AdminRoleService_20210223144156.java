@@ -18,7 +18,7 @@ public interface AdminRoleService extends IService<AdminRoleEntity> {
      * 
      * @return
      */
-    public List<AdminRoleDTO> listDTO();
+    public List<AdminRoleDTO> list();
 
     /**
      * 角色列表

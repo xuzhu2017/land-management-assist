@@ -36,17 +36,8 @@ public class AdminRoleServiceImpl extends ServiceImpl<AdminRoleDAO, AdminRoleEnt
         });
 
         List<Integer> roleIdList = roleList.stream().map(AdminRoleDTO::getId).collect(Collectors.toList());
-        // 角色菜单
         List<AdminMenuDTO> roleMenuList = adminRoleDAO.getMenuListByRoleId(roleIdList);
-        // 角色权限
         List<AdminPermissionDTO> rolePermissionList = adminRoleDAO.getPermissionListByRoleId(roleIdList);
-
-        roleList.stream().forEach(role -> {
-            role.setMenuList(
-                    roleMenuList.stream().filter(m -> m.getRoleId().equals(role.getId())).collect(Collectors.toList()));
-            role.setPermissionList(rolePermissionList.stream().filter(p -> p.getRoleId().equals(role.getId()))
-                    .collect(Collectors.toList()));
-        });
 
         return roleList;
     }

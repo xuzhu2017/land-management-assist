@@ -2,9 +2,7 @@ package com.xz.landmangementassist.service;
 
 import java.util.List;
 
-import com.baomidou.mybatisplus.extension.service.IService;
 import com.xz.landmangementassist.domain.dto.admin.AdminRoleDTO;
-import com.xz.landmangementassist.domain.entity.admin.AdminRoleEntity;
 
 /**
  * AdminRoleService
@@ -18,7 +16,7 @@ public interface AdminRoleService extends IService<AdminRoleEntity> {
      * 
      * @return
      */
-    public List<AdminRoleDTO> listDTO();
+    public List<AdminRoleDTO> list();
 
     /**
      * 角色列表

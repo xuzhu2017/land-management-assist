@@ -15,11 +15,12 @@ import com.xz.landmangementassist.domain.entity.admin.AdminRolePermissionEntity;
  */
 public interface AdminRolePermissionService extends IService<AdminRolePermissionEntity> {
     /**
-     * 保存RolePermissionList
+     * save
      * 
-     * @param roleId
+     * @param permissionId
      * @param adminPermissionList
      * @return
      */
-    public void saveRolePermissionList(Integer roleId, List<AdminPermissionDTO> adminPermissionList);
+    public List<AdminRolePermissionDTO> saveRolePermissionList(Integer permissionId,
+            List<AdminPermissionDTO> adminPermissionList);
 }

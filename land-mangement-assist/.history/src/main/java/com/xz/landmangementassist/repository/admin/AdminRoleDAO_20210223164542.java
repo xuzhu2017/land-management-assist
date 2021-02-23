@@ -4,7 +4,6 @@ import java.util.List;
 
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 import com.xz.landmangementassist.domain.dto.admin.AdminMenuDTO;
-import com.xz.landmangementassist.domain.dto.admin.AdminPermissionDTO;
 import com.xz.landmangementassist.domain.entity.admin.AdminRoleEntity;
 
 import org.apache.ibatis.annotations.Mapper;
@@ -33,17 +32,4 @@ public interface AdminRoleDAO extends BaseMapper<AdminRoleEntity> {
             + "<foreach item='id' collection='roleIdList' open='(' separator=',' close=')'>" + "#{id}" + "</foreach>"
             + ")" + "</script>")
     List<AdminMenuDTO> getMenuListByRoleId(@Param("roleIdList") List<Integer> roleIdList);
-
-    /**
-     * 获取角色对应权限
-     * 
-     * @param roleIdList
-     * @return
-     */
-    @Select("<script>" + "select t_admin_permission.*,t_admin_role_permission.role_id  " + "from t_admin_permission "
-            + "inner join t_admin_role_permission on t_admin_permission.permission_id = t_admin_role_permission.id "
-            + "where t_admin_role_permission.role_id in ("
-            + "<foreach item='id' collection='roleIdList' open='(' separator=',' close=')'>" + "#{id}" + "</foreach>"
-            + ")" + "</script>")
-    List<AdminPermissionDTO> getPermissionListByRoleId(@Param("roleIdList") List<Integer> roleIdList);
 }

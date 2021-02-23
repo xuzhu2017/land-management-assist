@@ -17,9 +17,10 @@ public interface AdminRolePermissionService extends IService<AdminRolePermission
     /**
      * 保存RolePermissionList
      * 
-     * @param roleId
+     * @param permissionId
      * @param adminPermissionList
      * @return
      */
-    public void saveRolePermissionList(Integer roleId, List<AdminPermissionDTO> adminPermissionList);
+    public List<AdminRolePermissionDTO> saveRolePermissionList(Integer permissionId,
+            List<AdminPermissionDTO> adminPermissionList);
 }

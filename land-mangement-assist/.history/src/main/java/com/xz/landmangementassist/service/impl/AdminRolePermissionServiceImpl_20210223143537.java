@@ -6,6 +6,7 @@ import java.util.List;
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import com.xz.landmangementassist.domain.dto.admin.AdminPermissionDTO;
+import com.xz.landmangementassist.domain.dto.admin.AdminRolePermissionDTO;
 import com.xz.landmangementassist.domain.entity.admin.AdminRolePermissionEntity;
 import com.xz.landmangementassist.repository.admin.AdminRolePermissionDAO;
 import com.xz.landmangementassist.service.AdminRolePermissionService;
@@ -34,12 +35,13 @@ public class AdminRolePermissionServiceImpl extends ServiceImpl<AdminRolePermiss
         adminRolePermissionDAO.delete(queryWrapper);
 
         List<AdminRolePermissionEntity> list = new ArrayList<>();
-        adminPermissionList.stream().forEach(p -> {
+        adminPermissionList.stream().forEach(action);
+        for (Integer mid : menusIds.get("menusIds")) {
             AdminRolePermissionEntity rm = new AdminRolePermissionEntity();
-            rm.setPermissionId(p.getId());
+            rm.setMemuId(mid);
             rm.setRoleId(roleId);
             list.add(rm);
-        });
+        }
 
         saveBatch(list);
     }

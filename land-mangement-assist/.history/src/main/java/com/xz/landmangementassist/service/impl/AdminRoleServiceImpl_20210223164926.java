@@ -2,11 +2,8 @@ package com.xz.landmangementassist.service.impl;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.stream.Collectors;
 
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
-import com.xz.landmangementassist.domain.dto.admin.AdminMenuDTO;
-import com.xz.landmangementassist.domain.dto.admin.AdminPermissionDTO;
 import com.xz.landmangementassist.domain.dto.admin.AdminRoleDTO;
 import com.xz.landmangementassist.domain.entity.admin.AdminRoleEntity;
 import com.xz.landmangementassist.repository.admin.AdminRoleDAO;
@@ -33,19 +30,6 @@ public class AdminRoleServiceImpl extends ServiceImpl<AdminRoleDAO, AdminRoleEnt
             AdminRoleDTO roleDTO = new AdminRoleDTO();
             roleDTO.convertFrom(r);
             roleList.add(roleDTO);
-        });
-
-        List<Integer> roleIdList = roleList.stream().map(AdminRoleDTO::getId).collect(Collectors.toList());
-        // 角色菜单
-        List<AdminMenuDTO> roleMenuList = adminRoleDAO.getMenuListByRoleId(roleIdList);
-        // 角色权限
-        List<AdminPermissionDTO> rolePermissionList = adminRoleDAO.getPermissionListByRoleId(roleIdList);
-
-        roleList.stream().forEach(role -> {
-            role.setMenuList(
-                    roleMenuList.stream().filter(m -> m.getRoleId().equals(role.getId())).collect(Collectors.toList()));
-            role.setPermissionList(rolePermissionList.stream().filter(p -> p.getRoleId().equals(role.getId()))
-                    .collect(Collectors.toList()));
         });
 
         return roleList;

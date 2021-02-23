@@ -41,13 +41,6 @@ public class AdminRoleServiceImpl extends ServiceImpl<AdminRoleDAO, AdminRoleEnt
         // 角色权限
         List<AdminPermissionDTO> rolePermissionList = adminRoleDAO.getPermissionListByRoleId(roleIdList);
 
-        roleList.stream().forEach(role -> {
-            role.setMenuList(
-                    roleMenuList.stream().filter(m -> m.getRoleId().equals(role.getId())).collect(Collectors.toList()));
-            role.setPermissionList(rolePermissionList.stream().filter(p -> p.getRoleId().equals(role.getId()))
-                    .collect(Collectors.toList()));
-        });
-
         return roleList;
     }
 
