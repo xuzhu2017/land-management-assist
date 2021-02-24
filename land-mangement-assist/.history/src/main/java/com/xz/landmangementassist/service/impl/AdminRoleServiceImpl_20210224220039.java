@@ -11,7 +11,6 @@ import com.xz.landmangementassist.domain.dto.admin.AdminRoleDTO;
 import com.xz.landmangementassist.domain.entity.admin.AdminRoleEntity;
 import com.xz.landmangementassist.repository.admin.AdminRoleDAO;
 import com.xz.landmangementassist.service.AdminRoleService;
-import com.xz.landmangementassist.utils.BeanUtil;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -54,8 +53,8 @@ public class AdminRoleServiceImpl extends ServiceImpl<AdminRoleDAO, AdminRoleEnt
 
     @Override
     public AdminRoleDTO saveRolePermission(AdminRoleDTO adminRole) {
-        AdminRoleEntity entity = BeanUtil.transformFrom(adminRole, AdminRoleEntity.class);
-        boolean success = save(entity);
+        AdminRoleEntity entity=
+        // boolean success = save(adminRole);
         return null;
     }
 

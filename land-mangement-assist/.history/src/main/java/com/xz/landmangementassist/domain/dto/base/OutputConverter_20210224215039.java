@@ -4,6 +4,8 @@ import org.springframework.lang.NonNull;
 
 import static com.xz.landmangementassist.utils.BeanUtil.updateProperties;
 
+import java.lang.reflect.InvocationTargetException;
+
 /**
  * Converter interface for output DTO.
  *
@@ -14,8 +16,6 @@ import static com.xz.landmangementassist.utils.BeanUtil.updateProperties;
  * @author johnniang
  */
 public interface OutputConverter<DTO extends OutputConverter<DTO, DOMAIN>, DOMAIN> {
-
-    // TODO: xuzhu:去掉上界通配符，并且实现转entity和转dto，以及通过entity来创建dto
 
     /**
      * Convert from domain.(shallow)

@@ -15,8 +15,6 @@ import static com.xz.landmangementassist.utils.BeanUtil.updateProperties;
  */
 public interface OutputConverter<DTO extends OutputConverter<DTO, DOMAIN>, DOMAIN> {
 
-    // TODO: xuzhu:去掉上界通配符，并且实现转entity和转dto，以及通过entity来创建dto
-
     /**
      * Convert from domain.(shallow)
      *
@@ -30,5 +28,12 @@ public interface OutputConverter<DTO extends OutputConverter<DTO, DOMAIN>, DOMAI
         updateProperties(domain, this);
 
         return (T) this;
+    }
+
+    // TODO: xuzhu:写一个从dto创建实体的方法
+    default <DOMAIN> DOMAIN createEntity(DOMAIN domain) {
+        DOMAIN entity = domain.getClass().newInstance().getDeclaredConstructor(domain).newInstance(initargs);
+        updateProperties(this, entity);
+        return entity;
     }
 }

@@ -15,8 +15,6 @@ import static com.xz.landmangementassist.utils.BeanUtil.updateProperties;
  */
 public interface OutputConverter<DTO extends OutputConverter<DTO, DOMAIN>, DOMAIN> {
 
-    // TODO: xuzhu:去掉上界通配符，并且实现转entity和转dto，以及通过entity来创建dto
-
     /**
      * Convert from domain.(shallow)
      *
