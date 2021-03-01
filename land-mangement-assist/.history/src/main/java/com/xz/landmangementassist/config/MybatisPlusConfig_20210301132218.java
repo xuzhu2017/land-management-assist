@@ -9,19 +9,12 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
 /**
- * MybatisPlusConfig
- * 
  * @author xuzhu
  * @date 2021-2-19 09:44:32
  */
 @Configuration
 @MapperScan("com.xz.landmangementassist.repository.admin")
 public class MybatisPlusConfig {
-    /**
-     * 分页插件
-     * 
-     * @return
-     */
     @Bean
     public MybatisPlusInterceptor mybatisPlusInterceptor() {
         MybatisPlusInterceptor interceptor = new MybatisPlusInterceptor();

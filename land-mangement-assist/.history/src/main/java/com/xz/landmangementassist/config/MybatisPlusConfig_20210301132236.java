@@ -17,11 +17,6 @@ import org.springframework.context.annotation.Configuration;
 @Configuration
 @MapperScan("com.xz.landmangementassist.repository.admin")
 public class MybatisPlusConfig {
-    /**
-     * 分页插件
-     * 
-     * @return
-     */
     @Bean
     public MybatisPlusInterceptor mybatisPlusInterceptor() {
         MybatisPlusInterceptor interceptor = new MybatisPlusInterceptor();

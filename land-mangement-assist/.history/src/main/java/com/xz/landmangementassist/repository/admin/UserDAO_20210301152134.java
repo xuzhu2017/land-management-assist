@@ -4,7 +4,6 @@ import java.util.List;
 
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 import com.xz.landmangementassist.domain.dto.admin.UserDTO;
-import com.xz.landmangementassist.domain.dto.query.UserQueryDTO;
 import com.xz.landmangementassist.domain.entity.admin.UserEntity;
 
 import org.apache.ibatis.annotations.Mapper;

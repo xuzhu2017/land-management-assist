@@ -1,5 +1,6 @@
 package com.xz.landmangementassist.utils;
 
+import com.alibaba.fastjson.serializer.ClobSeriliazer;
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.xz.landmangementassist.domain.dto.query.IQuery;
 

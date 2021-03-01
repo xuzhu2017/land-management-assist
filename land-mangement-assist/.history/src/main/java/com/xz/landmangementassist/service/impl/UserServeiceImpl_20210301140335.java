@@ -4,7 +4,7 @@ import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.core.metadata.IPage;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import com.xz.landmangementassist.domain.dto.admin.UserDTO;
-import com.xz.landmangementassist.domain.dto.query.UserQueryDTO;
+import com.xz.landmangementassist.domain.dto.admin.UserQueryDTO;
 import com.xz.landmangementassist.domain.entity.admin.UserEntity;
 import com.xz.landmangementassist.repository.admin.UserDAO;
 import com.xz.landmangementassist.service.UserService;

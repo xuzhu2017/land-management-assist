@@ -3,7 +3,7 @@ package com.xz.landmangementassist.service;
 import com.baomidou.mybatisplus.core.metadata.IPage;
 import com.baomidou.mybatisplus.extension.service.IService;
 import com.xz.landmangementassist.domain.dto.admin.UserDTO;
-import com.xz.landmangementassist.domain.dto.query.UserQueryDTO;
+import com.xz.landmangementassist.domain.dto.admin.UserQueryDTO;
 import com.xz.landmangementassist.domain.entity.admin.UserEntity;
 
 /**
