@@ -58,7 +58,7 @@ const devWebpackConfig = merge(baseWebpackConfig, {
       inject: true
     }),
     // copy custom static assets
-    new CopyWebpackPlugin([{
+    new CopyWebpackPlugin({
       patterns: [
         { 
           from: path.resolve(__dirname, '../static'),
@@ -66,7 +66,7 @@ const devWebpackConfig = merge(baseWebpackConfig, {
           ignore: ['.*']
         }
       ],
-    }])
+    })
   ]
 })
 
