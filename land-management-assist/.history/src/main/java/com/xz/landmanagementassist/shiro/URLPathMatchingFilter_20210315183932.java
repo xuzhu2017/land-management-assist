@@ -1,15 +1,6 @@
 package com.xz.landmanagementassist.shiro;
 
-import java.util.Set;
-
-import javax.servlet.ServletRequest;
-import javax.servlet.ServletResponse;
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
-
-import com.xz.landmanagementassist.service.admin.AdminPermissionService;
-import com.xz.landmanagementassist.utils.SpringContextUtil;
-
+import lombok.extern.log4j.Log4j2;
 import org.apache.shiro.SecurityUtils;
 import org.apache.shiro.subject.Subject;
 import org.apache.shiro.web.filter.PathMatchingFilter;
@@ -17,7 +8,15 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpMethod;
 import org.springframework.http.HttpStatus;
 
-import lombok.extern.log4j.Log4j2;
+import javax.servlet.ServletRequest;
+import javax.servlet.ServletResponse;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+import com.xz.landmanagementassist.service.AdminPermissionService;
+import com.xz.landmanagementassist.utils.SpringContextUtil;
+
+import java.util.Set;
 
 /**
  * @author xuzhu
