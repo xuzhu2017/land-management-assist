@@ -47,7 +47,7 @@ export default{
           password: this.loginForm.password
         })
         .then(resp => {
-          if (resp.data.code === AdminErrorInfoEnum.LOGIN_SUCCESS) {
+          if (resp.data.code === AdminErrorInfoEnum.) {
             var data = resp.data.result
             _this.$store.commit('login', data)
             var path = _this.$route.query.redirect

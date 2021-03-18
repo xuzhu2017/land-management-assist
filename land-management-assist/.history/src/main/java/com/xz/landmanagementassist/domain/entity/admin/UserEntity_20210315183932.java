@@ -56,6 +56,12 @@ public class UserEntity extends BaseEntity implements Serializable {
     private String phone;
 
     /**
+     * 邮件地址
+     *
+     */
+    private String email;
+
+    /**
      * 逻辑删除
      */
     private boolean deleted;

@@ -88,6 +88,9 @@ public class UserServeiceImpl extends ServiceImpl<UserDAO, UserEntity> implement
             subject.login(usernamePasswordToken);
             UserDTO userDTO = getByUsername(username);
             MyAssert.isTrue(!userDTO.isDeleted(), AdminErrorInfoEnum.LOGIN_USERDELETE_ERROR);
+            if (!userDTO.isDeleted()) {
+                return Result.error(AdminErrorInfoEnum.LOGIN_USERDELETE_ERROR);
+            }
             return Result.success(userDTO, AdminErrorInfoEnum.LOGIN_SUCCESS);
         } catch (IncorrectCredentialsException e) {
             return Result.error(AdminErrorInfoEnum.LOGIN_PWD_ERROR);

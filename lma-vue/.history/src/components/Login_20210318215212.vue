@@ -1,3 +1,5 @@
+import { AdminErrorInfoEnum } from "@/constant"
+
 <template>
   <body id="paper">
     <el-form :model="loginForm" :rules="rules" class="login-container" label-position="left"
@@ -21,8 +23,6 @@
   </body>
 </template>
 <script>
-import { AdminErrorInfoEnum } from '@/constant'
-
 export default{
   data () {
     return {
@@ -47,7 +47,7 @@ export default{
           password: this.loginForm.password
         })
         .then(resp => {
-          if (resp.data.code === AdminErrorInfoEnum.LOGIN_SUCCESS) {
+          if (resp.data.code === 200) {
             var data = resp.data.result
             _this.$store.commit('login', data)
             var path = _this.$route.query.redirect
