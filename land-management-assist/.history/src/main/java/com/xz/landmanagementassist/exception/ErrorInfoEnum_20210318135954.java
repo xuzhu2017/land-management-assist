@@ -19,11 +19,11 @@ public enum ErrorInfoEnum implements BaseErrorInfo {
     /**
      * 更新成功！
      */
-    UPDATE_SUCCESS("202", "更新成功！"),
+    UPDATE_SUCCESS("201", "更新成功！"),
     /**
      * 删除成功！
      */
-    DELETE_SUCCESS("203", "更新成功！"),
+    DELETE_SUCCESS("201", "更新成功！"),
     /**
      * 请求的数据格式不符！
      */

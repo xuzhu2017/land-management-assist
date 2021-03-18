@@ -18,7 +18,7 @@ public class ServiceUtil {
      * 
      * @param userEntity
      */
-    public static void passwordEncryption(UserEntity userEntity) {// TODO:xuzhu：把加密算法换成sha1
+    public static void passwordEncryption(UserEntity userEntity) {
         // 默认生成 16 位盐
         String salt = new SecureRandomNumberGenerator().nextBytes().toString();
         String encodedPassword = new SimpleHash(GeneralConstant.ALGORITHM_NAME, userEntity.getPassword(), salt,

@@ -37,7 +37,7 @@ public class UserServeiceImpl extends ServiceImpl<UserDAO, UserEntity> implement
     UserDAO userDAO;
 
     @Override
-    public IPage<UserEntity> selectUserList(UserQueryDTO queryDTO) {
+    public Result<IPage<UserEntity>> selectUserList(UserQueryDTO queryDTO) {
         IPage<UserEntity> page = new Page<>(queryDTO.getPageParam().getPageNum(),
                 queryDTO.getPageParam().getPageSize());
         QueryWrapper<UserEntity> queryWrapper = new QueryWrapper<>();

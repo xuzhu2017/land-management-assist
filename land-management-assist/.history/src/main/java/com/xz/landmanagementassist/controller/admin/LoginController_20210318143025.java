@@ -1,5 +1,6 @@
 package com.xz.landmanagementassist.controller.admin;
 
+import com.xz.landmanagementassist.controller.BaseController;
 import com.xz.landmanagementassist.domain.common.Result;
 import com.xz.landmanagementassist.domain.dto.admin.UserDTO;
 import com.xz.landmanagementassist.service.admin.UserService;
@@ -17,7 +18,7 @@ import org.springframework.web.bind.annotation.RestController;
  * @date 2021-3-15 22:07:49
  */
 @RestController
-public class LoginController {
+public class LoginController extends BaseController {
     @Autowired
     UserService userService;
 
