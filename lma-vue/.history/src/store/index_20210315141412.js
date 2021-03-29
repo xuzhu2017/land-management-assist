@@ -6,9 +6,9 @@ Vue.use(Vuex)
 export default new Vuex.Store({
   state: {
     username:
-      window.localStorage.getItem('username') == null
+      window.sessionStorage.getItem('username') == null
         ? ''
-        : JSON.parse(window.localStorage.getItem('username' || '[]')),
+        : JSON.parse(window.sessionStorage.getItem('username' || '[]')),
     adminMenus: []
   },
   mutations: {
@@ -17,12 +17,12 @@ export default new Vuex.Store({
     },
     login(state, data) {
       state.username = data
-      window.localStorage.setItem('username', JSON.stringify(data))
+      window.sessionStorage.setItem('username', JSON.stringify(data))
     },
     logout(state) {
       // 注意不能用 null 清除，否则将无法判断 user 里具体的内容
       state.username = ''
-      window.localStorage.removeItem('username')
+      window.sessionStorage.removeItem('username')
       state.adminMenus = []
     }
   },
