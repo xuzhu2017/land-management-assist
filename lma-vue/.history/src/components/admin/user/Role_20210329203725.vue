@@ -223,8 +223,8 @@ export default {
       }
       this.$axios.put('/admin/role', {
         id: role.id,
-        code: role.code,
         name: role.name,
+        nameZh: role.nameZh,
         enabled: role.enabled,
         perms: perms
       }).then(resp => {

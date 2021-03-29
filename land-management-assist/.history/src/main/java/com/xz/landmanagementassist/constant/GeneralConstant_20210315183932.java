@@ -23,8 +23,4 @@ public interface GeneralConstant {
      * 哈希迭代次数
      */
     int HASH_ITERATIONS = 2;
-    /**
-     * 最大分页数
-     */
-    int MAX_PAGENUM = 1000;
 }

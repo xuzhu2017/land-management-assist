@@ -5,10 +5,10 @@
       :visible.sync="dialogFormVisible">
       <el-form v-model="selectedRole" style="text-align: left" ref="dataForm">
         <el-form-item label="角色名" label-width="120px" prop="username">
-          <el-input v-model="selectedRole.code" autocomplete="off"></el-input>
+          <el-input v-model="selectedRole.name" autocomplete="off"></el-input>
         </el-form-item>
         <el-form-item label="角色描述" label-width="120px" prop="name">
-          <el-input v-model="selectedRole.name" autocomplete="off"></el-input>
+          <el-input v-model="selectedRole.nameZh" autocomplete="off"></el-input>
         </el-form-item>
         <el-form-item label="功能配置" label-width="120px" prop="perms">
           <el-checkbox-group v-model="selectedPermsIds">
@@ -55,12 +55,12 @@
           width="100">
         </el-table-column>
         <el-table-column
-          prop="code"
+          prop="name"
           label="角色名"
           fit>
         </el-table-column>
         <el-table-column
-          prop="name"
+          prop="nameZh"
           label="角色描述"
           fit>
         </el-table-column>
@@ -118,7 +118,7 @@ export default {
       selectedMenusIds: [],
       props: {
         id: 'id',
-        label: 'name',
+        label: 'nameZh',
         children: 'children'
       }
     }
@@ -171,9 +171,9 @@ export default {
           }).then(resp => {
             if (resp && resp.data.code === 200) {
               if (value) {
-                this.$message('角色 [' + role.name + '] 已启用')
+                this.$message('角色 [' + role.nameZh + '] 已启用')
               } else {
-                this.$message('角色 [' + role.name + '] 已禁用')
+                this.$message('角色 [' + role.nameZh + '] 已禁用')
               }
             }
           })
@@ -223,8 +223,8 @@ export default {
       }
       this.$axios.put('/admin/role', {
         id: role.id,
-        code: role.code,
         name: role.name,
+        nameZh: role.nameZh,
         enabled: role.enabled,
         perms: perms
       }).then(resp => {

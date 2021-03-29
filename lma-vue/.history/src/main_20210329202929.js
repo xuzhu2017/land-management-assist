@@ -90,8 +90,8 @@ const formatRoutes = routes => {
       component: resolve => {
         require(['./components/admin/' + route.component + '.vue'], resolve)
       },
-      name: route.code,
-      nameZh: route.name,
+      name: route.name,
+      nameZh: route.nameZh,
       iconCls: route.iconCls,
       meta: {
         requireAuth: true

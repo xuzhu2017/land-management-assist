@@ -5,7 +5,7 @@
       :visible.sync="dialogFormVisible">
       <el-form v-model="selectedRole" style="text-align: left" ref="dataForm">
         <el-form-item label="角色名" label-width="120px" prop="username">
-          <el-input v-model="selectedRole.code" autocomplete="off"></el-input>
+          <el-input v-model="selectedRole.name" autocomplete="off"></el-input>
         </el-form-item>
         <el-form-item label="角色描述" label-width="120px" prop="name">
           <el-input v-model="selectedRole.name" autocomplete="off"></el-input>
@@ -55,7 +55,7 @@
           width="100">
         </el-table-column>
         <el-table-column
-          prop="code"
+          prop="name"
           label="角色名"
           fit>
         </el-table-column>
@@ -223,7 +223,7 @@ export default {
       }
       this.$axios.put('/admin/role', {
         id: role.id,
-        code: role.code,
+        name: role.name,
         name: role.name,
         enabled: role.enabled,
         perms: perms

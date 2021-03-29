@@ -17,7 +17,7 @@ export default {
     logout () {
       var _this = this
       this.$axios.get('/login/logout').then(resp => {
-        if (resp && resp.data.code === this.$AdminErrorInfoEnum.LOGOUT_SUCCESS) {
+        if (resp && resp.data.code === this.$AdminErrorInfoEnum.LOGIN_SUCCESS) {
           _this.$store.commit('logout')
           _this.$router.replace('/index')
           // 清空路由，防止路由重复加载

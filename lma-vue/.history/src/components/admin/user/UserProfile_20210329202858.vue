@@ -141,16 +141,16 @@ export default {
   methods: {
     listUsers () {
       var _this = this
-      this.$axios.get('/admin/user/pagedList').then(resp => {
-        if (resp && resp.data.code === this.$ErrorInfoEnum.SUCCESS) {
-          _this.users = resp.data.data.records
+      this.$axios.get('/admin/user').then(resp => {
+        if (resp && resp.data.code === 200) {
+          _this.users = resp.data.data
         }
       })
     },
     listRoles () {
       var _this = this
-      this.$axios.get('/admin/role/list').then(resp => {
-        if (resp && resp.data.code === this.$ErrorInfoEnum.SUCCESS) {
+      this.$axios.get('/admin/role').then(resp => {
+        if (resp && resp.data.code === 200) {
           _this.roles = resp.data.data
         }
       })

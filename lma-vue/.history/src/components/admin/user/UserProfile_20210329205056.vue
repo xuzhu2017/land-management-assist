@@ -143,7 +143,7 @@ export default {
       var _this = this
       this.$axios.get('/admin/user/pagedList').then(resp => {
         if (resp && resp.data.code === this.$ErrorInfoEnum.SUCCESS) {
-          _this.users = resp.data.data.records
+          _this.users = resp.data.data
         }
       })
     },

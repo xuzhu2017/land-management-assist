@@ -43,10 +43,10 @@ public interface AdminRoleDAO extends BaseMapper<AdminRoleEntity> {
          */
         @Select("<script>" + "select t_admin_permission.*,t_admin_role_permission.role_id  "
                         + "from t_admin_permission "
-                        + "inner join t_admin_role_permission on t_admin_permission.id = t_admin_role_permission.permission_id "
-                        + "where t_admin_role_permission.role_id in "
+                        + "inner join t_admin_role_permission on t_admin_permission.permission_id = t_admin_role_permission.id "
+                        + "where t_admin_role_permission.role_id in ("
                         + "<foreach item='id' collection='roleIdList' open='(' separator=',' close=')'>" + "#{id}"
-                        + "</foreach>" + "</script>")
+                        + "</foreach>" + ")" + "</script>")
         List<AdminPermissionDTO> getPermissionListByRoleId(@Param("roleIdList") List<Integer> roleIdList);
 
         /**

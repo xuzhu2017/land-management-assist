@@ -3,8 +3,6 @@ package com.xz.landmanagementassist.controller.admin;
 import javax.validation.Valid;
 
 import com.baomidou.mybatisplus.core.metadata.IPage;
-import com.xz.landmanagementassist.constant.GeneralConstant;
-import com.xz.landmanagementassist.domain.common.PageParam;
 import com.xz.landmanagementassist.domain.common.Result;
 import com.xz.landmanagementassist.domain.dto.admin.UserDTO;
 import com.xz.landmanagementassist.domain.dto.query.UserQueryDTO;
@@ -32,8 +30,7 @@ public class UserController {
 
     @GetMapping("/api/admin/user/pagedList")
     public Result<IPage<UserEntity>> pagedList() {
-        return Result
-                .success(userService.selectUserList(new UserQueryDTO(new PageParam(0, GeneralConstant.MAX_PAGENUM))));
+        return Result.success(userService.selectUserList(new UserQueryDTO(new PageParam())));
     }
 
     @PutMapping("/api/admin/user/resetPassword")

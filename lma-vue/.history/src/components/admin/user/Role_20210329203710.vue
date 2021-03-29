@@ -171,9 +171,9 @@ export default {
           }).then(resp => {
             if (resp && resp.data.code === 200) {
               if (value) {
-                this.$message('角色 [' + role.name + '] 已启用')
+                this.$message('角色 [' + role.nameZh + '] 已启用')
               } else {
-                this.$message('角色 [' + role.name + '] 已禁用')
+                this.$message('角色 [' + role.nameZh + '] 已禁用')
               }
             }
           })
@@ -223,8 +223,8 @@ export default {
       }
       this.$axios.put('/admin/role', {
         id: role.id,
-        code: role.code,
         name: role.name,
+        nameZh: role.nameZh,
         enabled: role.enabled,
         perms: perms
       }).then(resp => {

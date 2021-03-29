@@ -33,7 +33,7 @@ public class PageParam {
      * 每页数量
      */
     @NotNull(message = "每页数量不能为空")
-    @Max(value = GeneralConstant.MAX_PAGENUM, message = "每页最大为1000")
+    @Max(value = GeneralConstant.MAX_PAGENUM, message = "每页最大为1000" + GeneralConstant.MAX_PAGENUM.toString())
     protected Integer pageSize;
 
     /**

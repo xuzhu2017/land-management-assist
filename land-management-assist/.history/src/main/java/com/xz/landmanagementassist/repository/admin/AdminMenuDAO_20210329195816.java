@@ -31,6 +31,7 @@ public interface AdminMenuDAO extends BaseMapper<AdminMenuEntity> {
                         + "inner join t_admin_user on t_admin_user_role.user_id = t_admin_user.id "
                         + "where t_admin_user.username = #{username}")
         List<AdminMenuEntity> getMenuListByCurrentUser(@Param("username") String username);
+        // TODO: xuzhu 参数传递有问题，参数无法拼接到sql字符串里面
 
         /**
          * 获取角色菜单

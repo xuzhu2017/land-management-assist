@@ -12,8 +12,8 @@
           <el-input type="text" v-model="roleForm.name"
                     auto-complete="off" placeholder="角色名"></el-input>
         </el-form-item>
-        <el-form-item prop="nameZh">
-          <el-input type="text" v-model="roleForm.nameZh"
+        <el-form-item prop="name">
+          <el-input type="text" v-model="roleForm.name"
                     auto-complete="off" placeholder="角色描述"></el-input>
         </el-form-item>
         <el-form-item style="width: 100%">
@@ -39,7 +39,7 @@ export default {
       checked: true,
       roleForm: {
         name: '',
-        nameZh: ''
+        name: ''
       },
       loading: false
     }
@@ -48,14 +48,14 @@ export default {
     clear () {
       this.roleForm = {
         name: '',
-        nameZh: ''
+        name: ''
       }
     },
     createRole () {
       this.$axios
         .post('/admin/role', {
           name: this.roleForm.name,
-          nameZh: this.roleForm.nameZh
+          name: this.roleForm.name
         })
         .then(resp => {
           if (resp.data.code === 200) {

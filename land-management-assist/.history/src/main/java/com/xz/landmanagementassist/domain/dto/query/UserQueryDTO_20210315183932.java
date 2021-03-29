@@ -21,14 +21,6 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @EqualsAndHashCode(callSuper = true)
 public class UserQueryDTO extends UserDTO implements IQuery {
-
-    /**
-     * 只有分页，无条件的构造函数
-     */
-    public UserQueryDTO(PageParam pageParam) {
-        this.pageParam = pageParam;
-    }
-
     /**
      * 开始日期
      */

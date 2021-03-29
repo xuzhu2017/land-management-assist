@@ -41,19 +41,16 @@ public class UserServeiceImpl extends ServiceImpl<UserDAO, UserEntity> implement
         IPage<UserEntity> page = new Page<>(queryDTO.getPageParam().getPageNum(),
                 queryDTO.getPageParam().getPageSize());
         QueryWrapper<UserEntity> queryWrapper = new QueryWrapper<>();
-        if (queryDTO.getKeyword() != null) {
+        if (!queryDTO.getKeyword() == null)
             queryWrapper.like("username", queryDTO.getKeyword()).or().like("name", queryDTO.getKeyword());// 关键字查询用户名和真名
-        }
-        if (queryDTO.getPageParam().getOrders() != null) {
-            // 排序
-            queryDTO.getPageParam().getOrders().stream().forEach(orderItem -> {
-                if (orderItem.isAsc()) {
-                    queryWrapper.orderByAsc(orderItem.getColumn());
-                } else {
-                    queryWrapper.orderByDesc(orderItem.getColumn());
-                }
-            });
-        }
+        // 排序
+        queryDTO.getPageParam().getOrders().stream().forEach(orderItem -> {
+            if (orderItem.isAsc()) {
+                queryWrapper.orderByAsc(orderItem.getColumn());
+            } else {
+                queryWrapper.orderByDesc(orderItem.getColumn());
+            }
+        });
 
         return page(page, queryWrapper);
     }

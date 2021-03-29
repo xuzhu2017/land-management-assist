@@ -26,5 +26,5 @@ public interface GeneralConstant {
     /**
      * 最大分页数
      */
-    int MAX_PAGENUM = 1000;
+    Integer MAX_PAGENUM = 1000;
 }

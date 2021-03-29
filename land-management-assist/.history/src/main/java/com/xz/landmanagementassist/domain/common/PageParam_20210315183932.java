@@ -4,9 +4,6 @@ import lombok.Data;
 
 import javax.validation.constraints.Max;
 import javax.validation.constraints.NotNull;
-
-import com.xz.landmanagementassist.constant.GeneralConstant;
-
 import java.util.List;
 
 /**
@@ -18,11 +15,6 @@ import java.util.List;
 @Data
 public class PageParam {
 
-    public PageParam(Integer pageNum, Integer pageSize) {
-        this.pageNum = pageNum;
-        this.pageSize = pageSize;
-    }
-
     /**
      * 页码
      */
@@ -33,7 +25,7 @@ public class PageParam {
      * 每页数量
      */
     @NotNull(message = "每页数量不能为空")
-    @Max(value = GeneralConstant.MAX_PAGENUM, message = "每页最大为1000")
+    @Max(value = 200, message = "每页最大为200")
     protected Integer pageSize;
 
     /**
